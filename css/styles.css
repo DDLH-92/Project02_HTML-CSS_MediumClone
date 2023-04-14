@@ -124,6 +124,12 @@ hr {
   margin-right: 1rem;
 }
 
+.underline {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray);
+  margin-bottom: 2rem;
+}
+
 /* generic */
 
 .article-author {
@@ -261,4 +267,50 @@ nav {
 
 ::placeholder {
   color: var(--dark);
+}
+
+/* content */
+
+.content {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.articles {
+  flex: auto;
+}
+
+.articles article {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  grid-auto-rows: auto;
+  grid-template-areas:
+  "h3 img"
+  "title img"
+  "content img"
+  "details img";
+}
+
+.articles article img {
+  grid-area: img;
+}
+
+.articles article h3 {
+  grid-area: title;
+}
+
+.articles article p:first-child {
+  grid-area: content;
+}
+
+.articles article .article-author {
+  grid-area: author;
+}
+
+.articles article .text-hint {
+  grid-area: details;
+}
+
+.popular {
+  flex: 350px;
 }
