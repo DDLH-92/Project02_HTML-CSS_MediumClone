@@ -274,6 +274,7 @@ nav {
 .content {
   display: flex;
   margin: 2rem 0;
+  align-items: start;
 }
 
 .articles {
@@ -285,10 +286,15 @@ nav {
   grid-template-columns: 1fr 80px;
   grid-auto-rows: auto;
   grid-template-areas:
-  "h3 img"
-  "title img"
-  "content img"
-  "details img";
+    "h3 img"
+    "title img"
+    "content img"
+    "details img";
+    margin-bottom: 2rem;
+}
+
+.articles article h3, .articles article p {
+  margin: 0.2rem;
 }
 
 .articles article img {
@@ -313,4 +319,23 @@ nav {
 
 .popular {
   flex: 350px;
+  padding: 0 3rem;
+  position: sticky;
+  top: 45px;
+}
+
+.popular ul li {
+  display: grid;
+  grid-template-columns: 50px auto;
+  place-items: center center;
+  margin-bottom: 1rem;
+}
+
+.popular ul li div:first-child {
+  font-size: 3rem;
+  color: var(--gray-hint);
+}
+
+.popular ul li p, .popular ul li h3 {
+  margin: 0.2rem;
 }
